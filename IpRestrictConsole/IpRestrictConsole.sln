@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IpRestrictConsole", "IpRestrictConsole.csproj", "{2A037B24-2D03-4833-BE00-AA2C947F0019}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IpRestriction", "..\IpRestriction\IpRestriction.csproj", "{0F3DAB72-E2BD-407F-9512-AC1DF3FF998A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A037B24-2D03-4833-BE00-AA2C947F0019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A037B24-2D03-4833-BE00-AA2C947F0019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A037B24-2D03-4833-BE00-AA2C947F0019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A037B24-2D03-4833-BE00-AA2C947F0019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F3DAB72-E2BD-407F-9512-AC1DF3FF998A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F3DAB72-E2BD-407F-9512-AC1DF3FF998A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F3DAB72-E2BD-407F-9512-AC1DF3FF998A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F3DAB72-E2BD-407F-9512-AC1DF3FF998A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68350907-7652-4BCA-AAB7-BAF21E062FDE}
+	EndGlobalSection
+EndGlobal
