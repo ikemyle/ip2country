@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IpRestriction</name>
+    </assembly>
+    <members>
+        <member name="T:IpRestriction.IpCheckListRule">
+            <summary>
+            Enumeration of the country IP list check rule
+            </summary>
+        </member>
+        <member name="F:IpRestriction.IpCheckListRule.WhiteListOnly">
+            <summary>
+            Check IP address against white list only
+            </summary>
+        </member>
+        <member name="F:IpRestriction.IpCheckListRule.BlackListOnly">
+            <summary>
+            Check IP address  against black list only
+            </summary>
+        </member>
+        <member name="F:IpRestriction.IpCheckListRule.AllLists">
+            <summary>
+            Check IP address  against black list and white list
+            </summary>
+        </member>
+        <member name="T:IpRestriction.IpRestrictor">
+            <summary>
+            Implements restriction rules
+            </summary>
+        </member>
+        <member name="M:IpRestriction.IpRestrictor.#ctor(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            Costructor of IPRestrictor that pass rhe IP db path
+            </summary>
+            <param name="ip2LocationDbPath"></param>
+            <param name="whiteListCountries"></param>
+            <param name="blackListCountries"></param>
+        </member>
+        <member name="P:IpRestriction.IpRestrictor.ListRuleCheck">
+            <summary>
+            <para>Instruct restrictor how to proceed with black/white list checking</para>
+            <para>"AllList" instruct to check if the country Ip address exists in any of the white list or black list</para>
+            <para>"WhiteListOnly" instruct to check if the country Ip address exists in white list only</para>
+            <para>"BlackListOnly" instruct to check if the country Ip address exists in black list only</para>
+            </summary>
+        </member>
+        <member name="P:IpRestriction.IpRestrictor.RuleIpNotFound">
+            <summary>
+            Flag that instruct what is the allowance of countryIp address if not found in any of the white nor black lists
+            </summary>
+        </member>
+        <member name="P:IpRestriction.IpRestrictor.BlackListCountries">
+            <summary>
+            The country list to be restricted
+            </summary>
+        </member>
+        <member name="P:IpRestriction.IpRestrictor.WhiteListCountries">
+            <summary>
+            The country list to be allowed
+            </summary>
+        </member>
+        <member name="M:IpRestriction.IpRestrictor.GetIpResults(System.String[])">
+            <summary>
+            Get ip address allowance for a list on ip based of white/black lists
+            </summary>
+            <param name="ips"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IpRestriction.IpRestrictor.GetIpResult(System.String)">
+            <summary>
+            Get ip address allowance for an of ip based on white/black country lists as well as the <see cref="P:IpRestriction.IpRestrictor.RuleIpNotFound"/>        
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IpRestriction.IIpRestrictor">
+            <summary>
+            IpRestrictor interface
+            </summary>
+        </member>
+        <member name="P:IpRestriction.IIpRestrictor.ListRuleCheck">
+            <summary>
+            <para>Instruct restrictor how to proceed with black/white list checking</para>
+            <para>"AllList" instruct to check if the country Ip address exists in any of the white list or black list</para>
+            <para>"WhiteListOnly" instruct to check if the country Ip address exists in white list only</para>
+            <para>"BlackListOnly" instruct to check if the country Ip address exists in black list only</para>
+            </summary>
+        </member>
+        <member name="P:IpRestriction.IIpRestrictor.RuleIpNotFound">
+            <summary>
+            Flag that instruct what is the allowance of countryIp address if not found in any of the white nor black lists
+            </summary>
+        </member>
+        <member name="P:IpRestriction.IIpRestrictor.BlackListCountries">
+            <summary>
+            The country list to be restricted
+            </summary>
+        </member>
+        <member name="P:IpRestriction.IIpRestrictor.WhiteListCountries">
+            <summary>
+            The country list to be allowed
+            </summary>
+        </member>
+        <member name="M:IpRestriction.IIpRestrictor.GetIpResult(System.String)">
+            <summary>
+            Get ip address allowance for an of ip based on white/black country lists as well as the <see cref="P:IpRestriction.IIpRestrictor.RuleIpNotFound"/>        
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IpRestriction.IIpRestrictor.GetIpResults(System.String[])">
+            <summary>
+            Get ip address allowance for a list on ip based of white/black lists
+            </summary>
+            <param name="ips"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IpRestriction.InCountryList">
+            <summary>
+            Enumeration of IP result appartenance
+            </summary>
+        </member>
+        <member name="F:IpRestriction.InCountryList.InWhiteList">
+            <summary>
+            It exists in white list
+            </summary>
+        </member>
+        <member name="F:IpRestriction.InCountryList.InBlackList">
+            <summary>
+            It exists in black list
+            </summary>
+        </member>
+        <member name="F:IpRestriction.InCountryList.NeitherList">
+            <summary>
+            It does not exist in neither white lists
+            </summary>
+        </member>
+        <member name="T:IpRestriction.IpResultInfo">
+            <summary>
+            Result information for an IP address
+            </summary>
+        </member>
+        <member name="M:IpRestriction.IpResultInfo.#ctor(System.Boolean,IP2Location.IPResult,IpRestriction.InCountryList)">
+            <summary>
+            Passing parameters in constructor
+            </summary>
+            <param name="allowed"></param>
+            <param name="ipInfo"></param>
+            <param name="inList"></param>
+        </member>
+        <member name="P:IpRestriction.IpResultInfo.ItemInList">
+            <summary>
+            Returns the type of which list item is in
+            </summary>
+        </member>
+        <member name="P:IpRestriction.IpResultInfo.Allowed">
+            <summary>
+            Returns the flag that tells if IP address is allowed by the system
+            </summary>
+        </member>
+        <member name="P:IpRestriction.IpResultInfo.IpInfo">
+            <summary>
+            Return geo information about the IP address
+            </summary>
+        </member>
+        <member name="T:IpRestriction.IpSingleton">
+            <summary>
+            Singleton class that load and inspect Ip2Location database
+            </summary>
+        </member>
+        <member name="P:IpRestriction.IpSingleton.Ip2Location">
+            <summary>
+            The Ip component that holds the reference to the Ip database
+            </summary>
+        </member>
+        <member name="M:IpRestriction.IpSingleton.LoadDb(System.String)">
+            <summary>
+            Load Ip2Location database from the .bin file
+            </summary>
+            <param name="IpDbPath"></param>
+        </member>
+    </members>
+</doc>
